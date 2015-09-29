@@ -1,16 +1,12 @@
 describe('Events', function () {
     var TestPage = function () {
-        this.select = element(by.id('s2id_simpleSelect2'));
-        this.chosen = element(by.css('.select2-chosen'));
+        this.select = element(by.css('#simpleSelect2 +.select2'));
+        this.chosen = element.all(by.css(':checked'));
         this.limit_button = element(by.css('#limit'));
         this.choose_button = element(by.css('#choose_4'));
 
         this.get = function () {
             browser.get('http://localhost:9000/test/fixtures/events.html');
-        };
-
-        this.getChosenLabel = function () {
-            return this.chosen.getText();
         };
 
         this.limitOptionsNumber = function (index) {
@@ -33,7 +29,7 @@ describe('Events', function () {
         page.limitOptionsNumber();
         page.chooseUnavailableOption();
 
-        expect(page.getChosenLabel()).toEqual('');
+        expect(page.chosen.count()).toEqual(0);
     });
 });
 

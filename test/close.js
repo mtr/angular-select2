@@ -1,6 +1,6 @@
 describe('Simple', function () {
     var TestPage = function () {
-        this.select = element(by.id('s2id_simpleSelect2'));
+        this.select = element(by.css('#simpleSelect2 +.select2'));
 
         this.get = function () {
             browser.get('http://localhost:9000/test/fixtures/close.html');
@@ -28,11 +28,11 @@ describe('Simple', function () {
 
     it('Should close with closeAll', function () {
         page.openSelect();
-        browser.findElements(by.css('.select2-result')).then(function (arr) {
+        browser.findElements(by.css('#select2-simpleSelect2-results > li')).then(function (arr) {
             expect(arr.length).toEqual(2);
         });
         page.closeAll();
-        browser.findElements(by.css('.select2-result')).then(function (arr) {
+        browser.findElements(by.css('#select2-simpleSelect2-results > li')).then(function (arr) {
             expect(arr.length).toEqual(0);
         });
     });

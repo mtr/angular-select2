@@ -1,8 +1,8 @@
 describe('Simple', function () {
     var TestPage = function () {
         this.textInput = element(by.id('simpleText'));
-        this.select = element(by.id('s2id_simpleSelect2'));
-        this.chosen = element(by.css('.select2-chosen'));
+        this.select = element(by.css('#simpleSelect2 +.select2'));
+        this.chosen = element(by.css(':checked'));
 
         this.get = function () {
             browser.get('http://localhost:9000/test/fixtures/empty.html');
@@ -23,7 +23,8 @@ describe('Simple', function () {
 
         this.selectValue = function (index) {
             this.select.click();
-            element(by.css('.select2-result:nth-child(' + index + ')')).click();
+            var value = element(by.css('#select2-simpleSelect2-results > li:nth-child(' + index + ')'));
+            value.click();
         };
 
         this.get();

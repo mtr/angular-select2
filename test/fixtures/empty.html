@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="/bower_components/select2/select2.css" />
+        <link rel="stylesheet" type="text/css" href="/bower_components/select2/dist/css/select2.css" />
 
         <script src="/bower_components/jquery/dist/jquery.js"></script>
-        <script src="/bower_components/select2/select2.js"></script>
+        <script src="/bower_components/select2/dist/js/select2.js"></script>
         <script src="/bower_components/angular/angular.js"></script>
         <script src="/dist/angular-select2.js"></script>
         <script src="app.js"></script>
@@ -16,7 +16,12 @@
                     <label>No preselected value</label>
 
                     <input id="simpleText" type="text" ng-model="values.empty" />
-                    <select2 id="simpleSelect2" ng-model="values.empty" s2-options="id as name for (id, name) in singleOptions"></select2>
+                    <select2 id="simpleSelect2" ng-model="values.empty" options="{placeholder: 'None'}">
+                        <option></option>
+                        <option ng-repeat="item in singleOptionsArray track by item.key"
+                                value="{{item.key}}"
+                                ng-selected="item.key === values.empty">{{ item.value }}</option>
+                    </select2>
                 </fieldset>
             </form>
         </div>

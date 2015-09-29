@@ -6,12 +6,12 @@ angular.module("testapp", ["rt.select2"]).controller("TestController", function 
 
     $scope.singleOptionsArray = [
         { key: "1", value: "One" },
-        { key: "2", value: "Two" },
+        { key: "2", value: "Two" }
     ];
 
     $scope.singleIntOptionsArray = [
         { key: 1, value: "One" },
-        { key: 2, value: "Two" },
+        { key: 2, value: "Two" }
     ];
 
     $scope.multipleOptions = {
@@ -25,21 +25,21 @@ angular.module("testapp", ["rt.select2"]).controller("TestController", function 
         { key: "1", value: "One" },
         { key: "2", value: "Two" },
         { key: "3", value: "Three" },
-        { key: "4", value: "Four" },
+        { key: "4", value: "Four" }
     ];
 
     $scope.multipleIntOptionsArray = [
         { key: 1, value: "One" },
         { key: 2, value: "Two" },
         { key: 3, value: "Three" },
-        { key: 4, value: "Four" },
+        { key: 4, value: "Four" }
     ];
 
     $scope.eventsOptions = [
         { key: 1, value: "One" },
         { key: 2, value: "Two" },
         { key: 3, value: "Three" },
-        { key: 4, value: "Four" },
+        { key: 4, value: "Four" }
     ];
 
     $scope.values = {
@@ -48,7 +48,9 @@ angular.module("testapp", ["rt.select2"]).controller("TestController", function 
         multiple: ["1", "3"],
         multipleInt: [1, 3],
         query: 1,
-        init: 5
+        init: 5,
+        cleared: "",
+        empty: ""
     };
 
     $scope.selectOptions = {

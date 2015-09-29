@@ -1,6 +1,10 @@
 exports.config = {
     specs: [
-        'test/*.js'
+        //'test/*.js'
+        'test/clear.js',
+        'test/close.js',
+        'test/empty.js',
+        'test/events.js'
     ],
     jasmineNodeOpts: {
         defaultTimeoutInterval: 30000
